@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+  background-color: #ffc600;
+  font-family: "helvetica neue";
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel1 {
+  background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+}
+.panel2 {
+  background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+}
+.panel3 {
+  background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+.panel4 {
+  background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+.panel5 {
+  background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
+
+.panel {
+  flex: 1;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: flex 1s cubic-bezier(0.8, -0.46, 0.18, 1.5), background 0.2s;
+}
+
+.panel p:nth-child(2) {
+  font-size: 3.7rem;
+}
+
+p {
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 3px 3px black;
+  font-size: 2rem;
+  font-weight: 400px;
+  font-family: "Amatic SC", cursive;
+  transition: font-size 1s cubic-bezier(0.8, -0.46, 0.18, 1.5),
+    transform 1s cubic-bezier(0.8, -0.46, 0.18, 1.5) 0.5s;
+}
+
+.panel > * {
+  margin: 0;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.panel.open {
+  flex: 5;
+}
+.panel.open p {
+  font-size: 3rem;
+}
+.panel.open > *:nth-child(2) {
+  font-size: 8rem;
+}
+/* animation of first and last chils of a panel */
+.panel > *:first-child {
+  transform: translateY(-100%);
+}
+.panel.open-active > *:first-child {
+  transform: translateY(0);
+}
+.panel > *:last-child {
+  transform: translateY(100%);
+}
+.panel.open-active > *:last-child {
+  transform: translateY(0);
+}
