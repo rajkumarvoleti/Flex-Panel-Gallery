@@ -1,7 +1,7 @@
-var panels = document.querySelectorAll('.panel');
- function toggle(){
-     $(this).toggleClass('open');
-     $(this).toggleClass('open-active');
- }
+const panels = document.querySelectorAll(".img");
 
-panels.forEach(panel=> panel.addEventListener('click',toggle));
+function toggleOpen(){
+  this.classList.toggle('open-active');
+}
+
+panels.forEach(panel => panel.addEventListener('click',toggleOpen));
